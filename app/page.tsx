@@ -182,8 +182,6 @@ export default function Home() {
     }
   };
 
-  console.log(isPlaying);
-
   return (
     <body className={`light ${!openInvitation ? "overflow-hidden" : ""}`} data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
       <div className="overclosed">
