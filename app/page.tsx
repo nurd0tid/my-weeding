@@ -913,7 +913,7 @@ export default function Home() {
                           <ComboboxInput
                             className={clsx("text-sm border rounded w-full h-11 mt-2 bg-white border-gray-300 dark:border-gray-300 p-3")}
                             onChange={(event) => setQueryAttendance(event.target.value)}
-                            displayValue={(person) => person.name}
+                            displayValue={(person: AttendanceOption) => person.name}
                           />
                           <ComboboxButton className="group absolute inset-y-6 right-0 px-2.5">
                             <ChevronDownIcon className="size-4 fill-white/60 group-data-[hover]:fill-white" />
