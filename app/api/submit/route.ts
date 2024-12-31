@@ -20,8 +20,8 @@ export async function POST(req: NextRequest) {
     if (fileData) {
       jsonData = JSON.parse(fileData);
     }
-  } catch (error: any) {
-    if (error.code === "ENOENT") {
+  } catch (error: unknown) {
+    if (error instanceof Error && (error as NodeJS.ErrnoException).code === "ENOENT") {
       // File tidak ada, buat file baru
       fs.writeFileSync(dataPath, JSON.stringify([], null, 2));
     } else {
@@ -45,8 +45,8 @@ export async function GET() {
     if (fileData) {
       jsonData = JSON.parse(fileData);
     }
-  } catch (error: any) {
-    if (error.code === "ENOENT") {
+  } catch (error: unknown) {
+    if (error instanceof Error && (error as NodeJS.ErrnoException).code === "ENOENT") {
       // File tidak ada, buat file baru
       fs.writeFileSync(dataPath, JSON.stringify([], null, 2));
     } else {

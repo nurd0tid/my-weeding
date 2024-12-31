@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import AOS from "aos";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import "aos/dist/aos.css";
 import { useSearchParams } from "next/navigation";
@@ -609,7 +609,7 @@ export default function Home() {
                   <div className="w-full md:text-left">
                     <h3 className="text-2xl font-bold text-secondary">Pertama Kenal</h3>
                     <p>
-                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever
                       since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
                     </p>
                     <p className="my-2 flex justify-center md:justify-start space-x-4">
@@ -664,7 +664,7 @@ export default function Home() {
                   <div className="w-full md:text-left">
                     <h3 className="text-2xl font-bold text-secondary">Menyatakan Cinta</h3>{" "}
                     <p>
-                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever
                       since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
                     </p>{" "}
                     <p className="my-2 flex justify-center md:justify-start space-x-4">
@@ -719,7 +719,7 @@ export default function Home() {
                   <div className="w-full md:text-left">
                     <h3 className="text-2xl font-bold text-secondary">Tunangan</h3>{" "}
                     <p>
-                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever
                       since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
                     </p>{" "}
                     <p className="my-2 flex justify-center md:justify-start space-x-4">
