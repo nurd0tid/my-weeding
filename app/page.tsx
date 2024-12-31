@@ -103,7 +103,30 @@ export default function Home() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const response = await fetch("/api/submit", {
+    // const response = await fetch("/api/submit", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify({
+    //     name: guest,
+    //     attendance: selectedAttendance,
+    //     message,
+    //   }),
+    // });
+
+    // if (response.ok) {
+    //   const data = await response.json();
+    //   toast.success(data.message);
+    //   // Reset form
+    //   setSelectedAttendance("");
+    //   setMessage("");
+    //   // Fetch updated submissions
+    //   fetchSubmissions();
+    // } else {
+    //   toast.error("Failed to submit data");
+    // }
+    const response = await fetch("/.netlify/functions/submit", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -129,7 +152,10 @@ export default function Home() {
   };
 
   const fetchSubmissions = async () => {
-    const response = await fetch("/api/submit");
+    // const response = await fetch("/api/submit");
+    // const data = await response.json();
+    // setSubmissions(data);
+    const response = await fetch("/.netlify/functions/submit");
     const data = await response.json();
     setSubmissions(data);
   };
