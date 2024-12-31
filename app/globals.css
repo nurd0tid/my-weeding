@@ -1,0 +1,424 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+@font-face {
+  font-family: "Dancing Script";
+  src: url("/assets/fonts/dancing/normal.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Rouge Script";
+  src: url("/assets/fonts/rouge/normal.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body.overclosed {
+  overflow: hidden;
+}
+
+.fixed-bottom {
+  z-index: 4;
+}
+
+.navbar {
+  padding: 0;
+  box-shadow: 0 -6px 10px -5px hsla(0, 0%, 44.3%, 0.3);
+}
+
+.navbar .navbar-nav .nav-item {
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: -0.5px;
+}
+
+.navbar .navbar-nav .nav-item .nav-link {
+  padding: 0.8rem 3rem;
+  transition: all 0.5s ease-out;
+}
+
+.navbar .navbar-nav .nav-item .nav-link:hover {
+  color: #cea66b;
+}
+
+.navbar .navbar-nav .nav-item .nav-link svg {
+  font-size: 1.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.navbar-light .navbar-nav .active > .nav-link {
+  color: #fff;
+  background-color: #cea66b;
+}
+
+.navbar-light .navbar-nav .active > .nav-link:hover {
+  color: #fff;
+}
+
+.btn-donation,
+.play-pause {
+  bottom: 100px !important;
+  z-index: 3 !important;
+}
+
+.display-1 {
+  font-size: 6rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.h2,
+h2 {
+  font-size: 1.5rem;
+}
+
+.owl-nav {
+  margin-top: 20px;
+}
+
+.owl-nav .owl-next,
+.owl-nav .owl-prev {
+  border: solid 2px #cfa76a !important;
+  padding: 10px !important;
+  margin: 5px !important;
+}
+
+.owl-nav .owl-next span,
+.owl-nav .owl-prev span {
+  padding: 0px 12px;
+  color: #cfa76a;
+  font-size: 20px;
+}
+
+button.owl-next:hover,
+button.owl-prev:hover,
+button.owl-next:active,
+button.owl-prev:active,
+button.owl-next:focus,
+button.owl-prev:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+@media (max-width: 992px) {
+  .navbar .navbar-nav {
+    flex-direction: inherit;
+  }
+  .navbar .navbar-nav .nav-item .nav-link {
+    padding: 1rem;
+  }
+  .navbar .navbar-nav .nav-item .nav-link svg {
+    font-size: 1rem;
+  }
+  .btn-donation,
+  .play-pause {
+    bottom: 70px !important;
+  }
+}
+
+.cover {
+  color: #fff;
+  padding: 0 !important;
+  position: fixed !important;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  background-size: cover !important;
+  z-index: 60;
+}
+
+.cover .mahkota {
+  max-width: 225px;
+  max-height: 225px;
+}
+
+.page-holder {
+  min-height: 100vh;
+}
+
+.bg-cover {
+  background-size: cover !important;
+  padding: 0px;
+  position: relative;
+}
+
+.bg-cover::before,
+.cover::before {
+  content: "";
+  width: 100%;
+  min-height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.bg-cover .container {
+  position: relative;
+}
+
+.container {
+  max-width: 800px !important;
+  text-align: center;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.logo {
+  max-width: 225px;
+  max-height: 225px;
+}
+
+.triangle {
+  height: 80px;
+  width: 100%;
+  background-image: linear-gradient(to bottom right, transparent 50%, #be955a 51%), linear-gradient(to top right, transparent 50%, #be955a 51%),
+    linear-gradient(to bottom left, transparent 50%, #cca56b 51%), linear-gradient(to top left, transparent 50%, #cca56b 51%);
+  background-position: 0 0, 0 100%, 100% 0, 100% 100%;
+  background-size: 50.3% 50%;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: -40px;
+}
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body,
+html {
+  background: #f5f5f5;
+  scroll-behavior: smooth;
+}
+
+section {
+  padding: 50px 0px;
+  text-align: center;
+}
+
+.couple {
+}
+
+.couple-ring {
+  position: relative;
+}
+
+.couple-ring::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  background-image: url("/assets/frame.png");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.couple-ring img {
+  padding: 2rem;
+  margin-top: 0;
+}
+
+.location {
+  position: relative;
+}
+
+.location .card {
+  background-color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 10px;
+}
+
+.location::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #000;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.6;
+}
+.timer-wrapper .card {
+  background: rgba(205, 165, 107, 0.7);
+  color: #fff;
+  margin-bottom: 20px;
+}
+.parallax {
+  position: relative;
+  min-height: 300px;
+  color: #fff;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media (max-width: 576px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+}
+.parallax::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: rgb(73, 60, 60);
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.8;
+}
+.btn-secondary {
+  color: #fff;
+  background-color: #cda56b;
+  border-color: #c1975a;
+}
+h1 {
+  font-family: "Rouge Script", cursive;
+  line-height: 0.8 !important;
+}
+h2,
+h3 {
+  font-family: "Dancing Script", cursive;
+  font-weight: 600;
+}
+.guestbook {
+  background-color: rgba(255, 252, 249, 1);
+  position: relative;
+  padding: 150px 0;
+}
+.guestbook .card {
+  background: rgb(249 243 235);
+  z-index: 2;
+}
+
+.guestbook::before {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-image: url("/assets/footer_b.png");
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.guestbook::after {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-image: url("/assets/footer_t.png");
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+footer {
+  text-align: center;
+  background-color: rgba(206, 166, 107, 0.1);
+  padding: 20px 0 120px;
+}
+
+footer img {
+  max-width: 100px;
+}
+
+footer small {
+  display: block;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+  .display-1 {
+    font-size: 4rem;
+  }
+  .display-4 {
+    font-size: 3rem;
+  }
+  .cover h3 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-height: 576px) {
+  .logo {
+    max-width: 150px;
+    max-height: 150px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .bg-cover {
+    padding-top: 50px;
+  }
+  .cover h3 {
+    font-size: 3rem;
+  }
+  .cover .mahkota {
+    max-width: 405px;
+    max-height: 280px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
+
+.show-guest-book .container {
+  max-width: 600px;
+  max-height: 400px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  overflow-y: scroll;
+  border: solid 1px #efbf69;
+  border-radius: 20px;
+  background: #f9f3eb;
+  position: relative;
+}
+.show-guest-book .media-comment {
+  border-bottom: solid 1px #dcdcdc;
+}
