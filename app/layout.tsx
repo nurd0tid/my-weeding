@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import "./globals.css";
+import { Loader2 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Weeding Nur & Balqis",
@@ -41,7 +43,15 @@ export default function RootLayout({
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
       </head>
-      {children}
+      <Suspense
+        fallback={
+          <div className="flex items-center justify-center h-screen">
+            <Loader2 className="animate-spin text-amber-600" size={48} />
+          </div>
+        }
+      >
+        {children}
+      </Suspense>
     </html>
   );
 }
