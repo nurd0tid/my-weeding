@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Weeding Nur & Balqis",
     description: "Merayakan cinta dan kebahagiaan bersama Nur dan Balqis.",
-    url: "https://5304-180-243-14-32.ngrok-free.app",
+    url: "https://my-weeding-dream.netlify.app/",
     images: [
       {
         url: "/assets/preview.png",
@@ -37,7 +37,7 @@ export default function RootLayout({
           content="Merayakan cinta dan kebahagiaan bersama Nur dan Balqis. Temukan informasi lengkap tentang acara pernikahan mereka di sini."
         />
         <meta property="og:image" content="/assets/preview.png" />
-        <meta property="og:url" content="https://5304-180-243-14-32.ngrok-free.app" />
+        <meta property="og:url" content="https://my-weeding-dream.netlify.app/" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
       </head>
