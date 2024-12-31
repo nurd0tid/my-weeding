@@ -4,7 +4,6 @@ import AOS from "aos";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import "aos/dist/aos.css";
-import { useSearchParams } from "next/navigation";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import { Combobox, ComboboxButton, ComboboxInput, ComboboxOption, ComboboxOptions } from "@headlessui/react";
@@ -26,8 +25,7 @@ interface AttendanceOption {
 }
 
 export default function Home() {
-  const searchParams = useSearchParams();
-  const guest = searchParams.get("guest");
+  const [guest, setGuest] = useState<string>("");
   const [openInvitation, setOpenInvitation] = useState<boolean>(false);
   const [currentDate, setCurrentDate] = useState<string>("");
   const [activeSection, setActiveSection] = useState<string>("home");
@@ -44,6 +42,12 @@ export default function Home() {
   const [message, setMessage] = useState("");
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [submissions, setSubmissions] = useState<Submission[]>([]);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const guestParam = params.get("guest");
+    setGuest(guestParam ?? "");
+  }, []);
 
   useEffect(() => {
     AOS.init(); // Inisialisasi AOS
@@ -609,8 +613,8 @@ export default function Home() {
                   <div className="w-full md:text-left">
                     <h3 className="text-2xl font-bold text-secondary">Pertama Kenal</h3>
                     <p>
-                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever
-                      since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text
+                      ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
                     </p>
                     <p className="my-2 flex justify-center md:justify-start space-x-4">
                       <span>
@@ -664,8 +668,8 @@ export default function Home() {
                   <div className="w-full md:text-left">
                     <h3 className="text-2xl font-bold text-secondary">Menyatakan Cinta</h3>{" "}
                     <p>
-                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever
-                      since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text
+                      ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
                     </p>{" "}
                     <p className="my-2 flex justify-center md:justify-start space-x-4">
                       <span>
@@ -719,8 +723,8 @@ export default function Home() {
                   <div className="w-full md:text-left">
                     <h3 className="text-2xl font-bold text-secondary">Tunangan</h3>{" "}
                     <p>
-                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever
-                      since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text
+                      ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
                     </p>{" "}
                     <p className="my-2 flex justify-center md:justify-start space-x-4">
                       <span>
