@@ -154,6 +154,13 @@ export default function Home() {
       });
   };
 
+  const toggleNavigation = (value: boolean) => {
+    if (value) {
+      setOpenInvitation(true);
+      setIsPlaying(true);
+    }
+  };
+
   useEffect(() => {
     if (openInvitation) {
       const audio = document.getElementById("audio") as HTMLAudioElement;
@@ -174,6 +181,8 @@ export default function Home() {
       setIsPlaying(!isPlaying);
     }
   };
+
+  console.log(isPlaying);
 
   return (
     <body className={`light ${!openInvitation ? "overflow-hidden" : ""}`} data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
@@ -208,7 +217,7 @@ export default function Home() {
                   <button
                     type="button"
                     className="bg-gray-200 text-gray-800 inline-flex px-4 py-2 hover:opacity-70 rounded animate-slow-ease-in-out"
-                    onClick={() => setOpenInvitation(true)}
+                    onClick={() => toggleNavigation(true)}
                   >
                     Open Invitation
                   </button>
